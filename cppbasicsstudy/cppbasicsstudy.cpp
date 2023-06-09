@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <climits>
 
 #define ZERO 0 // like a search and replace tool
@@ -62,6 +62,36 @@ void chap3Study() {
     std::cout << sizeof 0x2ffULL << std::endl; // 8
     std::cout << typeid(0x2ffULL).name() << std::endl; // unsigned long long
     std::cout << std::endl;
+
+    // input a character
+    char ch;
+    std::cout << "input a character: _\b";
+    std::cin >> ch;
+    std::cout << "I got: " << ch << std::endl;
+    int ch_to_i = ch;
+    std::cout << "ASCII code: " << ch_to_i << std::endl;
+    std::cout.put(ch + 1); // printing using put method
+    std::cout.put('!');
+    std::cout << '\a'; // alarm sound
+    std::cout << std::endl;
+    std::cout << "ASCII\bABCDE" << std::endl; // \b moves a cursor one space left
+    std::cout << std::endl;
+    // to store an ASCII code letter, char is enough
+    // but to store a number to char, specify signed or unsigned depending on the range
+    signed char sch = -100;
+    unsigned char usch = 255; // if a negative number is assigned, overflow occurs
+    int sch_i = sch;
+    int usch_i = usch;
+    std::cout << sch_i << ' ' << usch_i << std::endl;
+    std::cout << std::endl;
+
+    // boolean
+    bool isready = true;
+    bool notready = false;
+    std::cout << isready << ' ' << notready << std::endl;
+    isready = -123; // negative number is also regarded as true
+    notready = 0; // only zero is false
+    std::cout << isready << ' ' << notready << std::endl;
 }
 
 int main()
