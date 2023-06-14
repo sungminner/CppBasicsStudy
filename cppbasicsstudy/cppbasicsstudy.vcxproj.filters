@@ -24,5 +24,13 @@
     <ClCompile Include="chap3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="chap4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="chap4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

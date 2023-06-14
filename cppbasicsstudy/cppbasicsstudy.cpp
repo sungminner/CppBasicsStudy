@@ -1,8 +1,10 @@
 ﻿#include "chap3.h"
+#include "chap4.h"
 
 int main()
 {
-    chap3::chap3Study();
+    // chap3::chap3Study();
+    chap4::chap4Study();
     return 0;
 }
 
