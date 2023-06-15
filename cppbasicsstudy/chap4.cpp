@@ -4,6 +4,12 @@
 #include "chap4.h"
 
 namespace chap4 {
+	struct inflatable // it is desirable to declare struct globally
+	{
+		char name[20];
+		float volume;
+		double price;
+	};
 	void chap4Study() {
 		// array basics
 		std::cout << "===== array basics =====" << std::endl;
@@ -59,5 +65,31 @@ namespace chap4 {
 		std::string str6;
 		getline(std::cin, str6); // read one whole line; syntax is different
 		std::cout << str6 << std::endl;
+
+		// struct
+		std::cout << "\n===== struct =====" << std::endl;
+
+		inflatable guest =
+		{
+			"Glorious Gloria",
+			1.88,
+			29.99
+		};
+		inflatable pal =
+		{
+			"Audacious Arthur",
+			3.12,
+			32.99
+		};
+		inflatable mayor{}; // can drop =; initialize every element with 0 including char[20]
+
+		std::cout << guest.name << std::endl << pal.name << std::endl << mayor.name << std::endl; // mayor.name is null(\0)
+		std::cout << guest.price + pal.price << std::endl;
+
+		inflatable guest2 = pal;
+		inflatable guests[3] = { guest, guest2, {"Bambi", 0.5, 2.99} };
+		std::cout << guests[0].name << std::endl;
+		std::cout << guests[1].volume << std::endl;
+		std::cout << guests[2].price << std::endl;
 	}
 }
