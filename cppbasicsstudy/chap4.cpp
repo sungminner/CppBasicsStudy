@@ -117,6 +117,30 @@ namespace chap4 {
 		std::cout << pail.int_val << std::endl; // this prints a random value
 		std::cout << pail.double_val << std::endl;
 
+		// enumeration
+		std::cout << "\n===== enumeration =====" << std::endl;
+		enum spectrum { red, orange, yellow, green, blue, violet, indigo, ultraviolet };
+		// this makes red, orange, ... const variables (which are called 'enumerator')
+		// it assignes red = 0, orange = 1, ... in order
+		// elements have to be int values
+		spectrum band; // declare a 'spectrum' type variable named 'band'
+		band = blue; // blue is a member of spectrum, so can be substituted
+		// band = 2000; // 2000 is not a member of spectrum, error occurs
 
+		int color = blue; // correct. which is 4
+		std::cout << color << std::endl;
+		// band = 3; // wrong. int cannot be changed into spectrum
+		color = 3 + violet; // correct. which is 8
+		std::cout << color << std::endl;
+		int color2 = blue + violet; // correct. which is 9; only assigning int into spectrum is illegal
+		std::cout << color2 << std::endl;
+		band = spectrum(4); // correct. datatype can be changed into spectrum
+		std::cout << band << std::endl;
+
+		enum power { one = 1, two = 2, four = 4, eight = 8 }; // assign values manually
+		enum bigstep { first, second = 100, third }; // first = 0, third = second + 1 = 101
+		enum myenum { alpha, betha = 0, charlie, delta = 1 }; // elements can get the same value
+
+		power myflag = power(6); // legal. because 6 is within enum power's range
 	}
 }
