@@ -91,5 +91,32 @@ namespace chap4 {
 		std::cout << guests[0].name << std::endl;
 		std::cout << guests[1].volume << std::endl;
 		std::cout << guests[2].price << std::endl;
+
+		struct // anonymous struct
+		{
+			char name[20];
+			float volume;
+			double price;
+		} s1, s2;
+		s1 = { "hello", 2.3, 3.5 };
+		s2 = { "hello2", 3.4, 5.6 };
+		std::cout << s1.name << s2.volume << std::endl;
+
+		// union
+		std::cout << "\n===== union =====" << std::endl;
+		union one4all // union can store one datatype, one value at a time
+		{
+			int int_val;
+			long long_val;
+			double double_val;
+		};
+		one4all pail;
+		pail.int_val = 15; // set int_val
+		std::cout << pail.int_val << std::endl;
+		pail.double_val = 1.38; // this removes int_val = 15
+		std::cout << pail.int_val << std::endl; // this prints a random value
+		std::cout << pail.double_val << std::endl;
+
+
 	}
 }
