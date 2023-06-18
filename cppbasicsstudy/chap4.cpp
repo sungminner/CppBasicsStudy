@@ -55,7 +55,7 @@ namespace chap4 {
 		std::string str4 = "panther";
 		std::cout << str4 << std::endl;
 		std::cout << str4[2] << std::endl;
-		std::string str5 = str4; // can directly substitute another string; not possible between char arrays
+		std::string str5 = str4; // can directly assign another string; not possible between char arrays
 		std::cout << str5 << std::endl;
 		std::cout << str4 + str5 << std::endl;
 		std::cout << str4 + " hello" << std::endl;
@@ -124,7 +124,7 @@ namespace chap4 {
 		// it assignes red = 0, orange = 1, ... in order
 		// elements have to be int values
 		spectrum band; // declare a 'spectrum' type variable named 'band'
-		band = blue; // blue is a member of spectrum, so can be substituted
+		band = blue; // blue is a member of spectrum, so can be assigned
 		// band = 2000; // 2000 is not a member of spectrum, error occurs
 
 		int color = blue; // correct. which is 4
@@ -150,5 +150,22 @@ namespace chap4 {
 		double cups = 4.5;
 		std::cout << donuts << ' ' << &donuts << std::endl;
 		std::cout << cups << ' ' << &cups << std::endl;
+
+		int updates = 6;
+		int* p_updates;
+
+		p_updates = &updates;
+		std::cout << updates << ' ' << *p_updates << std::endl;
+		std::cout << &updates << ' ' << p_updates << std::endl;
+		*p_updates = *p_updates + 1; // updating value using pointer
+		std::cout << updates << ' ' << *p_updates << std::endl;
+
+		// int* fellow;
+		// *fellow = 22022;
+		// if a pointer is not initialized by &variable, assigning any value to *pointer is not allowed
+
+		int* pt;
+		// when assigning memory address directly to a pointer, address number datatype has to be changed into int*
+		pt = (int*)0x000000C75097FBB8;
 	}
 }
