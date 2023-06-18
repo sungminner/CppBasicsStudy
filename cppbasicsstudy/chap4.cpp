@@ -209,5 +209,40 @@ namespace chap4 {
 		delete[] psome; // [] means deleting the entire array
 		// if a memory is defined by new, it must be deleted by delete
 		// if a memory is defined by new [], it must be deleted by delete[]
+
+		// pointer calculation
+		std::cout << "\n===== pointer calculation =====" << std::endl;
+
+		double wages[3] = { 10000.0, 20000.0, 30000.0 };
+		short stacks[3] = { 3, 2, 1 };
+
+		// two ways of getting a starting address of an array
+		double* pw = wages;
+		short* ps = &stacks[0];
+
+		std::cout << pw << ' ' << *pw << std::endl;
+		std::cout << ps << ' ' << *ps << std::endl;
+
+		pw++; // increase the pointer by 8 (size of double)
+		ps++; // increase the pointer by 2 (size of short)
+
+		std::cout << pw << ' ' << *pw << std::endl;
+		std::cout << ps << ' ' << *ps << std::endl;
+
+		std::cout << *wages << ' ' << *(wages + 1) << ' ';
+		std::cout << *(wages + 2) << std::endl;
+
+		// wages = wages + 1; // error; array name is a constant value of address
+		ps = ps + 1; // correct; pointer value can be changed
+		ps = ps - 1;
+
+		std::cout << sizeof(wages) << ' ' << sizeof(pw) << std::endl; // 24 and 8 (wages: size of array, pw: size of address itself)
+
+		std::cout << wages << ' ' << &wages << std::endl;
+		std::cout << wages + 1 << ' ' << &wages + 1 << std::endl; // adds 8 and 24 each, since &wages means the address of the entire array
+
+		double* pw2 = pw + 2;
+		double* pw3 = pw + 1;
+		std::cout << pw2 - pw3 << std::endl; // 1; difference in terms of index
 	}
 }
