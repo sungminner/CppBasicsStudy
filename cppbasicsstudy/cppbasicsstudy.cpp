@@ -4,7 +4,8 @@
 int main()
 {
     // chap3::chap3Study();
-    chap4::chap4Study();
+    // chap4::chap4StudyPt1();
+    chap4::chap4StudyPt2();
     return 0;
 }
 

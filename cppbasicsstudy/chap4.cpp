@@ -10,7 +10,7 @@ namespace chap4 {
 		float volume;
 		double price;
 	};
-	void chap4Study() {
+	void chap4StudyPt1() {
 		// array basics
 		std::cout << "===== array basics =====" << std::endl;
 		int arr1[3] = { 3, 4, 5 };
@@ -142,5 +142,13 @@ namespace chap4 {
 		enum myenum { alpha, betha = 0, charlie, delta = 1 }; // elements can get the same value
 
 		power myflag = power(6); // legal. because 6 is within enum power's range
+	}
+	void chap4StudyPt2() {
+		// pointer basics
+		std::cout << "===== pointer basics =====" << std::endl;
+		int donuts = 6;
+		double cups = 4.5;
+		std::cout << donuts << ' ' << &donuts << std::endl;
+		std::cout << cups << ' ' << &cups << std::endl;
 	}
 }
