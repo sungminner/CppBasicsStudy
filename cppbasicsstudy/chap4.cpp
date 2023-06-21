@@ -244,5 +244,22 @@ namespace chap4 {
 		double* pw2 = pw + 2;
 		double* pw3 = pw + 1;
 		std::cout << pw2 - pw3 << std::endl; // 1; difference in terms of index
+
+		// pointer and string
+		std::cout << "\n===== pointer and string =====" << std::endl;
+		char animal[20] = "bird";
+		int nums[3] = { 1, 2, 3 };
+		char* ppp;
+		// std::cout << ppp << std::endl; // error while executing; memory not allocated
+		// std::cin >> ppp; // should not directly input data to uninitialized pointer
+		ppp = animal;
+		std::cout << animal << std::endl; // printing name of char array or char pointer prints string until it meets \0 (null)
+		std::cout << ppp << std::endl;
+		std::cout << (int*)animal << std::endl; // to get char array or pointer's address, you have to convert it to int*
+		std::cout << (int*)ppp << std::endl; // point same address because it's a shallow copy
+		char* cp_ppp = new char[strlen(ppp) + 1];
+		// strcpy(cp_ppp, ppp); // deep copies the string; weirdly causes error
+		std::cout << (int*)cp_ppp << std::endl;
+		std::cout << (int*)ppp << std::endl;
 	}
 }
